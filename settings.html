@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/png" href="app-icon.png" />
+<style>
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    background: #1e1e1e;
+    color: #eee;
+  }
+  .container {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  h1 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #9ad;
+  }
+  p.intro {
+    font-size: 12px;
+    color: #999;
+    margin: 0 0 18px 0;
+  }
+  .field {
+    margin-bottom: 14px;
+  }
+  label {
+    display: block;
+    font-size: 12px;
+    color: #bbb;
+    margin-bottom: 4px;
+  }
+  select,
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    background: #2a2a2a;
+    color: #eee;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 7px 8px;
+    font-size: 13px;
+  }
+  .note {
+    font-size: 11px;
+    color: #999;
+    margin-top: 4px;
+    margin-bottom: 14px;
+    min-height: 14px;
+  }
+  .model-input-row {
+    display: flex;
+    gap: 6px;
+  }
+  .model-input-row select,
+  .model-input-row input {
+    flex: 1;
+  }
+  .model-input-row button {
+    background: #444;
+    color: #eee;
+    padding: 7px 10px;
+    flex-shrink: 0;
+  }
+  #modelCustomInput {
+    margin-top: 6px;
+    display: none;
+  }
+  #status {
+    font-size: 12px;
+    color: #7ee787;
+    margin-bottom: 8px;
+    min-height: 16px;
+  }
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+  button {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    background: #3b82f6;
+    color: white;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Indstillinger</h1>
+    <p class="intro">Vælg hvilken sprogmodel-udbyder appen skal bruge til at rette og finpudse tekst.</p>
+
+    <div class="field">
+      <label>Udbyder</label>
+      <select id="provider"></select>
+    </div>
+
+    <div class="field" id="apiKeyRow">
+      <label>API-nøgle</label>
+      <input type="password" id="apiKey" placeholder="Indsæt din API-nøgle" autocomplete="off" />
+    </div>
+
+    <div class="field" id="modelRow">
+      <label>Model</label>
+      <div class="model-input-row">
+        <select id="model"></select>
+        <button id="refreshModels" type="button" title="Hent modelliste fra udbyderen">↻</button>
+      </div>
+      <input id="modelCustomInput" type="text" placeholder="Skriv modelnavn" />
+      <div class="note" id="modelStatus"></div>
+    </div>
+
+    <div class="note" id="note"></div>
+
+    <div id="status"></div>
+
+    <div class="buttons">
+      <button id="save">Gem</button>
+    </div>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "name": "ai-vaerktoj",
+  "version": "1.0.3",
+  "description": "AI Værktøj til Mac - marker tekst, tryk Cmd+Shift+G, få rettet stavefejl eller finpudset teksten med din egen sprogmodel",
+  "main": "main.js",
+  "author": "Anton",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac",
+    "version:patch": "npm version patch --no-git-tag-version",
+    "version:minor": "npm version minor --no-git-tag-version",
+    "version:major": "npm version major --no-git-tag-version"
+  },
+  "build": {
+    "appId": "com.anton.aivaerktoj",
+    "productName": "AI Værktøj",
+    "files": [
+      "main.js",
+      "preload.js",
+      "store.js",
+      "aiProvider.js",
+      "popup.html",
+      "popup.js",
+      "trayWindow.html",
+      "trayWindow.js",
+      "settings.html",
+      "settings.js",
+      "iconTemplate.png",
+      "iconTemplate@2x.png"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    }
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.10",
+    "@ai-sdk/google": "^4.0.10",
+    "@ai-sdk/groq": "^4.0.11",
+    "@ai-sdk/openai": "^4.0.9",
+    "ai": "^7.0.18"
+  }
+}
