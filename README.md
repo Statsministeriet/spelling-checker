@@ -1,4 +1,4 @@
-# AI Værktøj
+# Antons AI Toolkit
 
 Lille menu-bar app til Mac der retter stavefejl og finpudser tekst, uanset hvilken app du står i. Bruger som udgangspunkt den gratis [LanguageTool](https://languagetool.org) API, men du kan i stedet tilslutte din egen sprogmodel (OpenAI, Anthropic eller Google) via [AI SDK](https://ai-sdk.dev).
 
@@ -52,7 +52,18 @@ Første gang du trykker Cmd+Shift+G eller Cmd+Shift+F beder macOS om **Accessibi
 npm run dist
 ```
 
-Det bygger en `.dmg`-fil i `dist/`-mappen. Åbn den og træk appen til Programmer-mappen. Husk stadig at give **AI Værktøj** Accessibility-tilladelse i Systemindstillinger.
+Det bygger en `.dmg`-fil i `dist/`-mappen. Åbn den og træk appen til Programmer-mappen. Husk stadig at give **Antons AI Toolkit** Accessibility-tilladelse i Systemindstillinger.
+
+## Mac App Store distribution
+
+Projektet er nu sat op med første MAS-build scripts:
+
+```bash
+npm run dist:mas-dev
+npm run dist:mas
+```
+
+Der er en fuld trin-for-trin guide i `APP_STORE.md` (certifikater, provisioning profile, build og upload).
 
 ## Sådan opdaterer du til en ny version
 

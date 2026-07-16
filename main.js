@@ -296,9 +296,9 @@ app.whenReady().then(() => {
   app.dock.hide();
 
   tray = new Tray(path.join(__dirname, 'iconTemplate.png'));
-  tray.setToolTip('AI Værktøj v' + app.getVersion() + ' (Cmd+Shift+G)');
+  tray.setToolTip('Antons AI Toolkit v' + app.getVersion() + ' (Cmd+Shift+G)');
   const menu = Menu.buildFromTemplate([
-    { label: 'AI Værktøj v' + app.getVersion(), enabled: false },
+    { label: 'Antons AI Toolkit v' + app.getVersion(), enabled: false },
     { type: 'separator' },
     { label: 'Ret stavefejl i markeret tekst (Cmd+Shift+G)', click: () => handleShortcut('spelling') },
     { label: 'Finpuds markeret tekst (Cmd+Shift+F)', click: () => handleShortcut('polish') },
