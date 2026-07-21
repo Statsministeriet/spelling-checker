@@ -1,6 +1,6 @@
 {
   "name": "antons-ai-toolkit",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Antons AI Toolkit til Mac - marker tekst, tryk Cmd+Shift+G, få rettet stavefejl eller finpudset teksten med din egen sprogmodel",
   "main": "main.js",
   "author": "Anton",
@@ -56,6 +56,7 @@
     "@ai-sdk/google": "^4.0.10",
     "@ai-sdk/groq": "^4.0.11",
     "@ai-sdk/openai": "^4.0.9",
-    "ai": "^7.0.18"
+    "ai": "^7.0.18",
+    "zod": "^4.4.3"
   }
 }
